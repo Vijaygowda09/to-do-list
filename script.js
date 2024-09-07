@@ -19,7 +19,9 @@ function addItem() {
 }
 
 function clearDone() {
-  $('#ulTasks .done').remove()
+  $('#ulTasks .done').fadeOut(function() {
+    $(this).remove()
+  })
   toggleInputButtons()
 }
 
@@ -28,8 +30,8 @@ function sortTasks() {
 }
 
 function toggleInputButtons() {
-  btnReset.prop('disabled', inpNewTask.val() == '')
-  btnAdd.prop('disabled', inpNewTask.val() == '')
+  btnReset.prop('disabled', inpNewTask.val() === '')
+  btnAdd.prop('disabled', inpNewTask.val() === '')
   btnSort.prop('disabled', ulTasks.children().length < 1)
   btnCleanup.prop('disabled', ulTasks.children().length < 1)
 }
@@ -37,6 +39,7 @@ function toggleInputButtons() {
 inpNewTask.keypress((e) => {
   if (e.which == 13) addItem()
 })
+
 inpNewTask.on('input', toggleInputButtons)
 
 btnAdd.click(addItem)
