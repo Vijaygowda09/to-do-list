@@ -1,4 +1,82 @@
-#ulTasks li.done {
-    color: #6c757d;
-    text-decoration: line-through;
+body {
+  background: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 600px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  border: 2px solid #6c757d;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #5bc0de;
+  box-shadow: none;
+}
+
+.btn {
+  border-radius: 50px;
+  font-size: 14px;
+  padding: 10px 20px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-group-item {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.02);
+}
+
+.list-group-item.done {
+  color: #6c757d;
+  text-decoration: line-through;
+  background-color: #e9ecef;
+}
+
+#btnAdd:disabled {
+  background-color: #b5e7b2;
+}
+
+#btnReset:disabled, #btnSort:disabled, #btnCleanup:disabled {
+  background-color: #a7d3e1;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
