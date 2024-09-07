@@ -65,7 +65,7 @@ h1 {
   background-color: #b5e7b2;
 }
 
-#btnReset:disabled, #btnSort:disabled, #btnCleanup:disabled {
+#btnReset:disabled, #btnEdit:disabled, #btnCleanup:disabled {
   background-color: #a7d3e1;
 }
 
